@@ -183,7 +183,7 @@ For a managed stats engine, dashboards, and targeting, consider GrowthBook, Stat
 
 ## Deploying
 
-Push the repository to GitHub and import it into [Vercel](https://vercel.com/new). No configuration is needed. Shareable links such as `/?exp_heroCta=bold` let stakeholders review each variant directly.
+Push the repository to GitHub and import it into [Vercel](https://vercel.com/new) or [Netlify](https://app.netlify.com/start). No configuration is needed. Shareable links such as `/?exp_heroCta=bold` let stakeholders review each variant directly.
 
 ## Author
 

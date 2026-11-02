@@ -8,7 +8,7 @@ export function VariantSwitcher({
   current: Record<string, string>;
 }) {
   return (
-    <div className="fixed bottom-4 right-4 rounded-lg bg-black/85 p-3 text-xs text-white shadow-lg space-y-3">
+    <div className="fixed bottom-14 right-4 rounded-lg bg-black/85 p-3 text-xs text-white shadow-lg space-y-3">
       {Object.entries(experiments).map(([key, exp]) => (
         <div key={key} className="space-y-1">
           <div className="font-semibold">{key}</div>
