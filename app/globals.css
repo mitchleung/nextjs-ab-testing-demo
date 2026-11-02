@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
+
+    --padding-inline: 1rem;
+    --content-max-width: 1440px;
+    --breakout-max-width: 2560px;
+    --breakout-size: calc(
+        (var(--breakout-max-width) - var(--content-max-width)) / 2
+    );
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@utility layout-grid {
+    display: grid;
+    grid-template-columns:
+        [full-width-start] minmax(var(--padding-inline), 1fr)
+        [breakout-start] minmax(0, var(--breakout-size))
+        [content-start] min(
+            calc(100% - (var(--padding-inline) * 2)),
+            var(--content-max-width)
+        )
+        [content-end] minmax(0, var(--breakout-size))
+        [breakout-end] minmax(var(--padding-inline), 1fr)
+        [full-width-end];
+
+    & > *:not(.breakout, .layout-grid) {
+        grid-column: content;
+    }
+
+    & > .breakout {
+        grid-column: breakout;
+    }
+
+    & > .layout-grid {
+        grid-column: full-width;
+        display: grid;
+        grid-template-columns: inherit;
+    }
 }
