@@ -185,6 +185,10 @@ For a managed stats engine, dashboards, and targeting, consider GrowthBook, Stat
 
 Push the repository to GitHub and import it into [Vercel](https://vercel.com/new). No configuration is needed. Shareable links such as `/?exp_heroCta=bold` let stakeholders review each variant directly.
 
+## Author
+
+Mitch Leung - [GitHub](https://github.com/mitchleung) - [LinkedIn](https://linkedin.com/in/mitchleung)
+
 ## License
 
 Released under the MIT License.
